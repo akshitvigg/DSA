@@ -16,7 +16,7 @@ int findPeakElement(vector<int> &arr) {
     while (low <= high) {
         int mid = (low + high) / 2;
 
-        //If arr[mid] is the peak:
+    
         if (arr[mid - 1] < arr[mid] && arr[mid] > arr[mid + 1])
             return mid;
 

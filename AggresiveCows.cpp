@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool canwePlace(vector<int> & baskets, int balls,int dist){
-        int cntBalls=1, last = baskets[0];
+        int cntCows=1, last = baskets[0];
         for(int i=1; i<baskets.size(); i++){
             if(baskets[i]- last>=dist){
                 cntBalls++;

@@ -16,12 +16,12 @@ int findSmallestMaxDist(long double dist, vector<int> &arr) {
         long double low = 0;
         long double high = 0;
 
-        // Find the maximum distance:
+
         for (int i = 0; i < n - 1; i++) {
             high = max(high, (long double)(arr[i + 1] - arr[i]));
         }
 
-        // Apply Binary search:
+
         long double diff = 1e-6;
         while (high - low > diff) {
             long double mid = (low + high) / 2.0;

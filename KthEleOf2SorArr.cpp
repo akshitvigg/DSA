@@ -1,7 +1,7 @@
 
 import java.util.*;
 
-public class tUf {
+public class Aks {
     public static int kthElement(ArrayList<Integer> a, ArrayList<Integer> b, int m, int n, int k) {
         if (m > n) return kthElement(b, a, n, m, k);
 
@@ -12,7 +12,7 @@ public class tUf {
         while (low <= high) {
             int mid1 = (low + high) >> 1;
             int mid2 = left - mid1;
-            // calculate l1, l2, r1, and r2
+        
             int l1 = Integer.MIN_VALUE, l2 = Integer.MIN_VALUE;
             int r1 = Integer.MAX_VALUE, r2 = Integer.MAX_VALUE;
             if (mid1 < m) r1 = a.get(mid1);
@@ -24,7 +24,7 @@ public class tUf {
                 return Math.max(l1, l2);
             }
 
-            // eliminate the halves:
+    
             else if (l1 > r2) high = mid1 - 1;
             else low = mid1 + 1;
         }

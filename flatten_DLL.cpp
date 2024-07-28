@@ -2,12 +2,12 @@
 class Solution {
 public:
     Node* merge(Node* l1, Node* l2) {
-        Node* dummyN = new Node(-1); // Dummy node to simplify edge cases
+        Node* dummyN = new Node(-1); 
         Node* res = dummyN;
 
         while (l1 != nullptr && l2 != nullptr) {
             if (l1->val < l2->val) {
-                res->next = l1; // Use 'next' to link nodes
+                res->next = l1;
                 l1->prev = res;
                 res = l1;
                 l1 = l1->next;
@@ -29,7 +29,7 @@ public:
 
         Node* mergedHead = dummyN->next;
         if (mergedHead) mergedHead->prev = nullptr;
-        delete dummyN; // Free the dummy node
+        delete dummyN; 
         return mergedHead;
     }
 
@@ -41,21 +41,21 @@ public:
             if (current->child != nullptr) {
                 Node* next = current->next;
 
-                // Flatten the child list recursively
+      
                 Node* child = flatten(current->child);
 
-                // Connect current node to the flattened child
+  
                 current->next = child;
                 child->prev = current;
                 current->child = nullptr;
 
-                // Find the tail of the flattened child list
+
                 Node* tail = child;
                 while (tail->next != nullptr) {
                     tail = tail->next;
                 }
 
-                // Connect the tail of the flattened child list to the next node
+
                 tail->next = next;
                 if (next != nullptr) {
                     next->prev = tail;

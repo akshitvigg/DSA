@@ -14,7 +14,7 @@ void MyQueue:: push(int x)
 int MyQueue :: pop()
 {
     if(front==nullptr){
-        cout<<"queue is empty"<<endl;
+       return -1;
         
     }else{
     int value = front->data;
